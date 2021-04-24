@@ -28,6 +28,25 @@
   }
 }
 
+.currentEpisode {
+  text-align: center;
+  img {
+    border-radius: 1.5rem;
+  }
+  strong {
+    display: block;
+    margin-top: 2rem;
+    font: 600 1.25rem Lexend, sans-serif;
+  }
+
+  span {
+    display: block;
+    margin-top: 1rem;
+    opacity: 0.6;
+    line-height: 1.5rem;
+  }
+}
+
 .emptyPlayerContainer {
   width: 100%;
   height: 20rem;
@@ -72,19 +91,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top:2.5rem;
+  margin-top: 2.5rem;
   gap: 1.5rem;
 
   button {
     background: transparent;
     border: 0;
     font-size: 0;
+    transition: filter 0.2s;
 
-    &.playButton{
+    &:hover:not(:disabled) {
+      filter: brightness(0.8);
+    }
+
+    &.playButton {
       width: 4rem;
       height: 4rem;
       border-radius: 1rem;
       background: var(--purple-400);
+      &:hover:not(:disabled) {
+        filter: brightness(0.9);
+      }
+    }
+
+    &:disabled {
+      cursor: default;
     }
   }
 }
